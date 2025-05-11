@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import AnimatedCounter from '@/components/common/AnimatedCounter';
+import AnimatedCounter from '@/billiards/common/AnimatedCounter';
 import { TrendingDown, TrendingUp, Minus } from 'lucide-react';
 import { StatusCardProps } from '@/types';
 

@@ -1,14 +1,14 @@
 
 import React, { useState } from 'react';
-import Navbar from '@/components/layout/Navbar';
-import Sidebar from '@/components/layout/Sidebar';
+import Navbar from '@/billiards/layout/Navbar';
+import Sidebar from '@/billiards/layout/Sidebar';
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Calendar, Filter, Fuel, Plus, Search, Truck, User } from 'lucide-react';
 import { GasSupply } from '@/types';
-import GasSupplyDialog from '@/components/gas/GasSupplyDialog';
+import GasSupplyDialog from '@/billiards/gas/GasSupplyDialog';
 import { useToast } from '@/hooks/use-toast';
 
 // Mock data for gas supplies

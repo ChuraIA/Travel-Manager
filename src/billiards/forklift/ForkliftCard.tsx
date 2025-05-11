@@ -2,7 +2,7 @@
 import React from 'react';
 import { Forklift, ForkliftStatus } from '@/types';
 import { cn } from '@/lib/utils';
-import Badge from '@/components/common/Badge';
+import Badge from '@/billiards/common/Badge';
 import { Clock, Settings, Calendar } from 'lucide-react';
 
 interface ForkliftCardProps {

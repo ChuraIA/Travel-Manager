@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import Navbar from '@/components/layout/Navbar';
-import Sidebar from '@/components/layout/Sidebar';
+import Navbar from '@/billiards/layout/Navbar';
+import Sidebar from '@/billiards/layout/Sidebar';
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
@@ -9,8 +9,8 @@ import { Input } from '@/components/ui/input';
 import { Calendar, Clock, Filter, Plus, Search, Truck, User } from 'lucide-react';
 import { Operation } from '@/types';
 import { useToast } from '@/hooks/use-toast';
-import OperationDialog from '@/components/operations/OperationDialog';
-import OperationDetails from '@/components/operations/OperationDetails';
+import OperationDialog from '@/billiards/operations/OperationDialog';
+import OperationDetails from '@/billiards/operations/OperationDetails';
 
 // Mock data for operations
 const initialOperations: Operation[] = [

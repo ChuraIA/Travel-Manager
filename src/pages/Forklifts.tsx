@@ -1,16 +1,16 @@
 
 import React, { useState } from 'react';
-import Navbar from '@/components/layout/Navbar';
-import Sidebar from '@/components/layout/Sidebar';
+import Navbar from '@/billiards/layout/Navbar';
+import Sidebar from '@/billiards/layout/Sidebar';
 import { Forklift, ForkliftStatus, ForkliftType } from '@/types';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Plus, Filter, Search } from 'lucide-react';
-import ForkliftList from '@/components/forklift/ForkliftList';
+import ForkliftList from '@/billiards/forklift/ForkliftList';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
-import ForkliftDialog from '@/components/forklift/ForkliftDialog';
-import ForkliftDetails from '@/components/forklift/ForkliftDetails';
+import ForkliftDialog from '@/billiards/forklift/ForkliftDialog';
+import ForkliftDetails from '@/billiards/forklift/ForkliftDetails';
 import { useToast } from '@/hooks/use-toast';
 
 // Mock data for the forklifts

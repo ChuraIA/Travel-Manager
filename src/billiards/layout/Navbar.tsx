@@ -2,7 +2,7 @@
 import React from 'react';
 import { Bell, Search, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import Badge from '@/components/common/Badge';
+import Badge from '@/billiards/common/Badge';
 
 interface NavbarProps {
   title: string;

@@ -1,14 +1,14 @@
 
 import React, { useState } from 'react';
-import Navbar from '@/components/layout/Navbar';
-import Sidebar from '@/components/layout/Sidebar';
+import Navbar from '@/billiards/layout/Navbar';
+import Sidebar from '@/billiards/layout/Sidebar';
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Calendar, Filter, Plus, Search, Truck, User, AlertOctagon } from 'lucide-react';
 import { Maintenance, MaintenanceStatus } from '@/types';
-import MaintenanceDialog from '@/components/maintenance/MaintenanceDialog';
+import MaintenanceDialog from '@/billiards/maintenance/MaintenanceDialog';
 import { useToast } from '@/hooks/use-toast';
 
 // Mock data for maintenance

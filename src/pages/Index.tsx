@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import Navbar from '@/components/layout/Navbar';
-import Sidebar from '@/components/layout/Sidebar';
-import DashboardOverview from '@/components/dashboard/DashboardOverview';
-import ForkliftCard from '@/components/forklift/ForkliftCard';
+import Navbar from '@/billiards/layout/Navbar';
+import Sidebar from '@/billiards/layout/Sidebar';
+import DashboardOverview from '@/billiards/dashboard/DashboardOverview';
+import ForkliftCard from '@/billiards/forklift/ForkliftCard';
 import { Forklift, ForkliftStatus, ForkliftType } from '@/types';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';

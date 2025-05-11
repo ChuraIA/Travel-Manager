@@ -1,15 +1,15 @@
 
 import React, { useState } from 'react';
-import Navbar from '@/components/layout/Navbar';
-import Sidebar from '@/components/layout/Sidebar';
+import Navbar from '@/billiards/layout/Navbar';
+import Sidebar from '@/billiards/layout/Sidebar';
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
 import { CertificateStatus, User, UserRole } from '@/types';
 import { BadgeCheck, Filter, Search, UserPlus } from 'lucide-react';
 import { Input } from '@/components/ui/input';
-import OperatorDialog from '@/components/operators/OperatorDialog';
-import OperatorDetails from '@/components/operators/OperatorDetails';
+import OperatorDialog from '@/billiards/operators/OperatorDialog';
+import OperatorDetails from '@/billiards/operators/OperatorDetails';
 import { useToast } from '@/hooks/use-toast';
 
 // Mock data for operators
