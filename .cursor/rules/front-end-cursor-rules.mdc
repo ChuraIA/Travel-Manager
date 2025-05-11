@@ -1,0 +1,37 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+// Reglas de desarrollo y arquitectura para el proyecto Billar Dashboard
+// ---------------------------------------------------------------
+// Estas reglas definen los estándares de codificación, arquitectura y mejores prácticas
+// para el desarrollo del sistema de administración de billar.
+//
+// 1. Utilizar React 18+, Vite, TypeScript, TailwindCSS 4.1, Shadcn UI y React Router 7.
+// 2. Seguir Clean Architecture: separar presentación, dominio y datos.
+// 3. Aplicar principios SOLID y Clean Code.
+// 4. Usar contextos de React para manejo de estado global cuando sea apropiado.
+// 5. Prefiere componentes funcionales y hooks personalizados.
+// 6. Nombres descriptivos y significativos para variables, funciones y componentes.
+// 7. Prefiere consts sobre functions para definir funciones.
+// 8. Prefiere export const para exportar componentes y funciones.
+// 9. Implementar accesibilidad en todos los elementos interactivos.
+// 10. Usar clases de Tailwind para estilos, evitando CSS externo.
+// 11. Manejar errores de forma adecuada en operaciones asíncronas.
+// 12. No dejar TODOs ni código incompleto.
+// 13. Código DRY, sin duplicación innecesaria.
+// 14. Separar responsabilidades y mantener alta cohesión y bajo acoplamiento.
+// 15. Implementar tipado estricto con TypeScript.
+// 16. Usar early returns para mejorar legibilidad.
+// 17. Prefiere composición sobre herencia.
+// 18. Organizar el código en capas: src/components, src/pages, src/hooks, src/lib, src/rules, src/types.
+// 19. Documentar el "por qué" en comentarios cuando sea necesario.
+// 20. Cumplir con los requisitos funcionales y técnicos del sistema.
+
+// Puedes importar y usar estas reglas como referencia en otros archivos si es necesario.
+
+export const developmentRules: string[] = [
+  // ...ver comentarios arriba para la lista completa...
+
+]; 

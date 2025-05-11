@@ -1,0 +1,342 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --color-status-operational: hsl(var(--status-operational));
+  --color-status-maintenance: hsl(var(--status-maintenance));
+  --color-status-inactive: hsl(var(--status-inactive));
+  --color-status-warning: hsl(var(--status-warning));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-fade-out: fade-out 0.3s ease-out;
+  --animate-slide-in-right: slide-in-right 0.3s ease-out;
+  --animate-slide-in-left: slide-in-left 0.3s ease-out;
+  --animate-slide-in-bottom: slide-in-bottom 0.4s ease-out;
+  --animate-count-up: count-up 0.3s ease-out;
+
+  --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --shadow-glass-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --shadow-neo: 5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff;
+  --shadow-neo-pressed:
+    inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
+
+  --backdrop-blur-xs: 2px;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slide-in-left {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slide-in-bottom {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes count-up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility glass-card {
+  @apply bg-white/80 dark:bg-card/80 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-glass;
+}
+
+@utility glass-card-hover {
+  @apply transition-all duration-300 hover:shadow-glass-hover hover:bg-white/90 dark:hover:bg-card/90;
+}
+
+@utility neo-card {
+  @apply bg-secondary shadow-neo transition-all duration-300;
+}
+
+@utility neo-card-active {
+  @apply shadow-neo-pressed;
+}
+
+@utility slide-enter {
+  animation: slide-in-bottom 0.4s ease-out forwards;
+}
+
+@utility counter-digit {
+  @apply inline-block overflow-hidden relative h-8;
+}
+
+@utility counter-column {
+  @apply transition-transform duration-300 ease-out;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 33% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 33% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 33% 18%;
+
+    --primary: 216 89% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222 33% 18%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 218 11% 45%;
+
+    --accent: 216 89% 96%;
+    --accent-foreground: 216 89% 46%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 216 89% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 216 89% 58%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 222 33% 18%;
+    --sidebar-accent: 216 89% 46%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 216 89% 46%;
+    --sidebar-ring: 210 40% 98%;
+
+    --status-operational: 142 71% 45%;
+    --status-maintenance: 41 100% 55%;
+    --status-inactive: 0 0% 70%;
+    --status-warning: 0 84% 60%;
+  }
+
+  .dark {
+    --background: 222 33% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 33% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 33% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 216 89% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 222 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 216 89% 24%;
+    --accent-foreground: 216 89% 96%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 33% 20%;
+    --input: 222 33% 20%;
+    --ring: 216 89% 58%;
+
+    --sidebar-background: 222 33% 14%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 216 89% 58%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 222 33% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 33% 20%;
+    --sidebar-ring: 216 89% 58%;
+
+    --status-operational: 142 71% 45%;
+    --status-maintenance: 41 100% 55%;
+    --status-inactive: 0 0% 50%;
+    --status-warning: 0 84% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/30;
+  }
+}
+
+/* Font imports */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
